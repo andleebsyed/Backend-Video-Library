@@ -34,4 +34,4 @@ app.use('/notes' , NotesRoute)
 // use error handling middlewares 
 
 
-app.listen(PORT , () => console.log("Server up and running at " , PORT))
+app.listen(process.env.PORT || PORT , () => console.log("Server up and running at " , PORT))
