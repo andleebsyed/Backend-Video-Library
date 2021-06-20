@@ -14,7 +14,7 @@ const UserSignUp= async (req , res) =>{
   }
   catch(error){
     if(error.code === 11000){
-       res.json({status : false , message : "couldn't add user" , errorDetail : error.message , existingField : Object.keys(error.keyPattern)[0]
+       res.json({status : false , code : 11000,  message : "couldn't add user" , errorDetail : error.message , existingField : Object.keys(error.keyPattern)[0]
        })
     }
     res.json({status : false , message : "couldn't add user" , errorDetail : error.message})
