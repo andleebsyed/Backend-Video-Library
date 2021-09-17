@@ -1,11 +1,11 @@
-const express = require('express')
-const bcrypt = require('bcrypt')
-const UsersRouter = express.Router()
-const {Users} = require('../models/user-model')
-const {UserSignUp, UserSignIn} = require('../controllers/users')
+const express = require("express");
+const bcrypt = require("bcrypt");
+const UsersRouter = express.Router();
+const { UserSignUp, UserSignIn, GuestAccess } = require("../controllers/users");
 
-UsersRouter.route('/signup').post(UserSignUp) 
+UsersRouter.route("/signup").post(UserSignUp);
 
-UsersRouter.route('/signin').post(UserSignIn)
+UsersRouter.route("/signin").post(UserSignIn);
+UsersRouter.route("/guest").post(GuestAccess);
 
-module.exports = {UsersRouter}
+module.exports = { UsersRouter };
